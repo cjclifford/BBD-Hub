@@ -1,6 +1,7 @@
 USE MASTER
 
 CREATE DATABASE BBD_Hub
+GO
 
 use BBD_Hub;
 GO
@@ -15,6 +16,7 @@ CREATE TABLE Flags
 	)
 );
 
+GO
 
 CREATE TABLE Rooms
 (
@@ -26,6 +28,7 @@ CREATE TABLE Rooms
 	)
 );
 
+GO
 
 CREATE TABLE Maintainers
 (
@@ -37,11 +40,10 @@ CREATE TABLE Maintainers
 		[MaintainerID] ASC
 	)
 );
+GO
 
 CREATE TABLE Requests
 (
-
-	/*PersonID int FOREIGN KEY REFERENCES Persons(PersonID)*/
 	[RequestID][int]IDENTITY(1,1) NOT NULL,
 	[RoomID] [int] FOREIGN KEY REFERENCES Rooms(RoomID),
 	[Description] varchar(500) NULL,
@@ -52,3 +54,5 @@ CREATE TABLE Requests
 		[RequestID] ASC
 	)
 );
+
+GO
