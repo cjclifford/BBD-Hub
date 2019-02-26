@@ -17,8 +17,8 @@ app.use(express.static(publicDir));
 //   });
 // });
 
-app.get('/', function (req, res) {
-    res.send('hello world')
+app.get('/', (req, res) => {
+    res.status(200).send('hello world');
 });
 
 app.get('/request', function (req, res) {
@@ -34,6 +34,7 @@ app.post("/Request", function (req, res) {
 app.post('/DeleteRequest', (req, res) => {
     // delete specified request from database
     res.send(`DELETE request success`);
+
 });
 
 app.listen(port, () => {
