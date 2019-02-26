@@ -17,7 +17,13 @@
   },
   "homepage": "https://github.com/cjclifford/BBD-Hub#readme",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.16.4",
     "mssql": "^4.3.2"
+=======
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
+>>>>>>> 06c8d647cd89792755b172ed9ee1a1dbf1fa51da
   }
 }

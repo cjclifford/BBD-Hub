@@ -1,3 +1,9 @@
+use master
+
+/*DROP DATABASE BBD_Hub
+GO
+*/
+
 CREATE DATABASE BBD_Hub
 GO
 
@@ -13,7 +19,6 @@ CREATE TABLE Flags
 		[FlagID] ASC
 	)
 );
-
 GO
 
 CREATE TABLE Rooms
@@ -25,7 +30,6 @@ CREATE TABLE Rooms
 		[RoomID] ASC
 	)
 );
-
 GO
 
 CREATE TABLE Maintainers
@@ -52,5 +56,4 @@ CREATE TABLE Requests
 		[RequestID] ASC
 	)
 );
-
 GO
