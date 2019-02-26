@@ -1,3 +1,9 @@
+use master
+
+/*DROP DATABASE BBD_Hub
+GO
+*/
+
 CREATE DATABASE BBD_Hub
 GO
 
