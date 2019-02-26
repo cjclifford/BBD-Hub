@@ -11,11 +11,11 @@ app.use(express.static(publicDir));
 
 
 //TEST remove when done
-// app.get('/', (req, res) => {
-//   res.render('home', {
-//       user: req.user
-//   });
-// });
+app.get('/', (req, res) => {
+  res.render('home', {
+      user: req.user
+  });
+});
 
 app.get('/', (req, res) => {
     res.status(200).send('hello world');
@@ -26,7 +26,7 @@ app.get('/request', function (req, res) {
     res.send("get request success");
 });
 
-app.post("/Request", function (req, res) {
+app.post("/request", function (req, res) {
   console.log(req);
   res.send("gotit");
 });
