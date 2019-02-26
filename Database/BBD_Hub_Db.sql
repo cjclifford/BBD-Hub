@@ -47,7 +47,6 @@ CREATE TABLE Requests
 	[RoomID] [int] FOREIGN KEY REFERENCES Rooms(RoomID),
 	[Description] varchar(500) NULL,
 	[FlagID] [int] FOREIGN KEY REFERENCES Flags(FlagID),
-	[Image] [varbinary](max) NULL,
 	CONSTRAINT [PK_Requests] PRIMARY KEY CLUSTERED 
 	(
 		[RequestID] ASC
