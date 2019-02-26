@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cjclifford/BBD-Hub/issues"
   },
-  "homepage": "https://github.com/cjclifford/BBD-Hub#readme"
+  "homepage": "https://github.com/cjclifford/BBD-Hub#readme",
+  "dependencies": {
+    "ejs": "^2.6.1"
+  }
 }

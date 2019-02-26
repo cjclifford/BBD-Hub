@@ -11,9 +11,9 @@ app.set('view engine', 'ejs');
 app.use(express.static(publicDir));
 
 app.get('/', (req, res) => {
-  res.render('home', {
-      user: req.user
-  });
+  // res.render('home', {
+  //     user: req.user
+  // });
 });
 
 app.post("/Request", function (req, res) {
