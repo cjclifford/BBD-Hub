@@ -4,8 +4,8 @@ const port = '4000';
 
 const app = express();
 
-app.get('/', (req, res) {
-    res.send('hello world')
+app.get('/', (req, res) => {
+    res.send('hello world');
 });
 
 app.get('/request', (res, req) => {
