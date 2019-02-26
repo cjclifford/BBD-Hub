@@ -1,0 +1,19 @@
+{
+  "name": "bbd-hub",
+  "version": "1.0.0",
+  "description": "h",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjclifford/BBD-Hub.git"
+  },
+  "author": "Cuan Clifford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjclifford/BBD-Hub/issues"
+  },
+  "homepage": "https://github.com/cjclifford/BBD-Hub#readme"
+}
