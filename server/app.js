@@ -5,15 +5,25 @@ const hostname = '127.0.0.1';
 const port = '4000';
 
 const app = express();
-
 //for testing remove later
 app.set('view engine', 'ejs');
 app.use(express.static(publicDir));
 
-app.get('/', (req, res) => {
-  res.render('home', {
-      user: req.user
-  });
+
+//TEST remove when done
+// app.get('/', (req, res) => {
+//   res.render('home', {
+//       user: req.user
+//   });
+// });
+
+app.get('/', function (req, res) {
+    res.send('hello world')
+});
+
+app.get('/request', function (req, res) {
+    // query database for requests
+    res.send("get request success");
 });
 
 app.post("/Request", function (req, res) {
@@ -21,16 +31,12 @@ app.post("/Request", function (req, res) {
   res.send("gotit");
 });
 
-app.get("/Request", function (req, res) {
-  console.log(req);
-  res.send("here you go");
-});
-
-app.delete("/Request", function (req, res) {
-  console.log(req);
-  res.send("it is gone");
+app.post('/DeleteRequest', (req, res) => {
+    // delete specified request from database
+    res.send(`DELETE request success`);
 });
 
 app.listen(port, () => {
-  console.log(`Server running at https://${hostname}:${port}`);
+    console.log(`Server running at https://${hostname}:${port}`);
+
 });
