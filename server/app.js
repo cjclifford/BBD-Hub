@@ -5,17 +5,17 @@ const port = '4000';
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('hello world');
+    res.status(200).send('hello world');
 });
 
-app.get('/request', (res, req) => {
+app.get('/request', (req, res) => {
     // query database for requests
-    res.statusCode(200).send(`get request success`);
+    res.status(200).send(`get request success`);
 });
 
-app.delete('/request', (res, req) => {
+app.delete('/request', (req, res) => {
     // delete specified request from database
-    res.statusCode(200).send(`DELETE request success`);
+    res.status(200).send(`DELETE request success`);
 });
 
 app.listen(port, () => {
