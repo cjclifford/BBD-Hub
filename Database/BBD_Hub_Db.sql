@@ -1,5 +1,3 @@
-USE MASTER
-
 CREATE DATABASE BBD_Hub
 GO
 
@@ -45,6 +43,7 @@ GO
 CREATE TABLE Requests
 (
 	[RequestID][int]IDENTITY(1,1) NOT NULL,
+	[Status][BIT] NOT NULL DEFAULT 0,
 	[RoomID] [int] FOREIGN KEY REFERENCES Rooms(RoomID),
 	[Description] varchar(500) NULL,
 	[FlagID] [int] FOREIGN KEY REFERENCES Flags(FlagID),
