@@ -18,9 +18,9 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
     this._roomsService.getAllRooms().subscribe(
-      data => {
-        this._sharedService.rooms = data;
-        this.rooms = data;
+      rooms => {
+        this._sharedService.rooms = rooms;
+        this.rooms = rooms;
         console.log(this.rooms);
       }
     );
