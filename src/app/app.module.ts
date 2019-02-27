@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { RequestFormComponent } from './request-form/request-form.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { RequestViewComponent } from './request-view/request-view.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     MapComponent,
     RequestFormComponent,
     HomepageComponent
+    RequestViewComponent
   ],
   imports: [
     BrowserModule,
