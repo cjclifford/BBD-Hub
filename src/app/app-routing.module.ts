@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/map', pathMatch: 'full'},
   {path: 'map', component: MapComponent},
   {path: 'homepage', component: HomepageComponent},
-  {path: 'request-view', component: RequestViewComponent}
+  {path: 'request-view/:id', component: RequestViewComponent}
 ];
 
 @NgModule({
