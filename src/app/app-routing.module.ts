@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'homepage', component: HomepageComponent},
   {path: 'login/User', component: SignInComponent},
   {path: 'request-view/:id', component: RequestViewComponent},
-  {path: 'request-form', component: RequestFormComponent}
+  {path: 'request-form/:id', component: RequestFormComponent}
 ];
 
 @NgModule({

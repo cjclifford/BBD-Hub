@@ -11,6 +11,7 @@ import { RequestFormComponent } from './request-form/request-form.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RequestViewComponent } from './request-view/request-view.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     RequestFormComponent,
     HomepageComponent,
     RequestViewComponent,
-    SignInComponent
+    SignInComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
