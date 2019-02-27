@@ -17,8 +17,8 @@ export class RequestsService {
       .pipe(catchError(this.errorHandler));
   }
 
-  getRequestByRoomId(id) {
-    return this._http.get(`${this._url}/${id}`)
+  getRequestsByRoomId(id) {
+    return this._http.get(`${this._url}byRoomId/${id}`)
       .pipe(catchError(this.errorHandler));
   }
 

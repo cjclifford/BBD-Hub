@@ -13,6 +13,7 @@ export class RequestViewComponent implements OnInit {
   mRequests: requests[];
 
   rooms;
+  requests;
   roomId;
 
   constructor(
@@ -23,9 +24,13 @@ export class RequestViewComponent implements OnInit {
 
   ngOnInit() {
     this.rooms = this._sharedService.rooms;
-    this._activatedRoute.snapshot.paramMap;
-    console.log(this.roomId);
-    this._requestsService.getRequestByRoomId(this.roomId);
+    this.roomId = this._activatedRoute.snapshot.paramMap.get('id');
+    this._requestsService.getRequestsByRoomId(this.roomId).subscribe(
+      requests => {
+        this.requests = requests;
+        console.log(requests)
+      }
+    );
   }
 
 }
