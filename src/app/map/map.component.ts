@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RoomsService } from '../services/room.service';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-map',
@@ -8,18 +9,19 @@ import { RoomsService } from '../services/room.service';
 })
 export class MapComponent implements OnInit {
 
-  constructor(private _roomsService: RoomsService) {}
+  constructor(
+    private _roomsService: RoomsService,
+    private _sharedService: SharedService
+  ) {}
 
-  public requests;
+  rooms;
 
   ngOnInit() {
-    console.log('map component');
-    this._roomsService.getAllRequests().subscribe(
+    this._roomsService.getAllRooms().subscribe(
       data => {
-        this.requests = data;
-        console.log(data);
+        this._sharedService.rooms = data;
+        this.rooms = data;
       }
     );
   }
-
 }

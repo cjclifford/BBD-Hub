@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { requests } from 'src/request';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-request-view',
@@ -8,10 +9,15 @@ import { requests } from 'src/request';
 })
 export class RequestViewComponent implements OnInit {
   mRequests: requests[];
+
+  rooms;
     
-  constructor() { }
+  constructor(
+    private _sharedService: SharedService
+  ) { }
 
   ngOnInit() {
+    this.rooms = this._sharedService.rooms;
   }
 
 }

@@ -102,10 +102,10 @@ app.post('/createNewMaintainers', (req, res) => {
 });
 
 // CRUD operations for rooms
-app.get('/getRooms', (req, res) => {
-    sql.query(`SELECT * FROM Rooms`, (error, recordSet) => {
+app.get('/getRooms', async (req, res) => {
+    await sql.query(`SELECT * FROM Rooms`, (error, recordSet) => {
         if (error) throw error;
-        res.status(200).send(recordSet);
+        res.status(200).send(recordSet.recordset);
     });
 });
 

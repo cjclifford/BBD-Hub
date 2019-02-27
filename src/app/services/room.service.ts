@@ -9,10 +9,11 @@ import { throwError } from 'rxjs';
 export class RoomsService {
 
   private _url = 'http://localhost:4000/getRooms';
+  public requests;
 
   constructor(private _http: HttpClient) {}
 
-  getAllRequests() {
+  getAllRooms() {
     return this._http.get(this._url)
       .pipe(catchError(this.errorHandler));
   }
