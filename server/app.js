@@ -49,6 +49,13 @@ app.get('/getRequests', (req, res) => {
     });
 });
 
+app.get('/getRequestsByRoomId/:id', (req, res) => {
+    sql.query(`SELECT * FROM Requests WHERE RoomID = ${req.params.id}`, (error, recordSet) => {
+        if (error) throw error;
+        res.status(200).send(recordSet.recordset);
+    });
+});
+
 app.get('/getSpecificRequest/:id', (req, res) => {
     sql.query(`SELECT * FROM Requests WHERE RequestID = ${req.params.id}`, (error, recordSet) => {
         if (error) throw error;
