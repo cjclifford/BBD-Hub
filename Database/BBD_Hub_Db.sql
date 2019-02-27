@@ -45,6 +45,18 @@ CREATE TABLE Maintainers
 );
 GO
 
+CREATE TABLE Users
+(
+	[UserID][int]IDENTITY(1,1) NOT NULL,
+	[FirstName][varchar](120) NULL,
+	[LastName][varchar](120) NULL,
+	CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+	(
+		[UserID] ASC
+	)
+);
+GO
+
 CREATE TABLE Requests
 (
 	[RequestID][int]IDENTITY(1,1) NOT NULL,

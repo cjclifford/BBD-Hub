@@ -13,6 +13,7 @@ VALUES
     ('Flooring'),
     ('Structural'),
     ('Office Equipment')
+GO
 
 INSERT INTO Rooms(Name)
 VALUES
@@ -21,3 +22,14 @@ VALUES
     ('Boo'),
     ('Game Room'),
     ('Cafeteria')
+GO
+
+INSERT INTO Users([FirstName],[LastName])
+VALUE
+    ('Bob','The Builder'),
+    ('Spongebob','Square Pants'),
+    ('Tinky','Winky'),
+    ('Dip','sy'),
+    ('La','La'),
+    ('P','O')
+GO
