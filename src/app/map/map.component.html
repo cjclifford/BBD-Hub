@@ -1,5 +1,5 @@
-<h2>Requests</h2>
-<div *ngFor="let request of requests">
-  <a [routerLink]="['/request-view', request.RoomID]">{{ request.Name }}</a>
+<h2>Rooms</h2>
+<div *ngFor="let room of rooms">
+  <a [routerLink]="['/request-view', room.RoomID]">{{ room.Name }}</a>
   <br>
 </div>

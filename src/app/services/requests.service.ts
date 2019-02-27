@@ -22,12 +22,6 @@ export class RequestsService {
       .pipe(catchError(this.errorHandler));
   }
 
-  // add request
-
-  // delete request
-
-  // get request by id
-
   errorHandler(error) {
     return throwError(error);
   }

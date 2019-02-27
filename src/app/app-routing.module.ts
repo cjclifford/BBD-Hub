@@ -11,6 +11,7 @@ const routes: Routes = [
   {path: 'homepage', component: HomepageComponent},
   {path: 'request-view', component: RequestViewComponent},
   {path: 'login/User', component: SignInComponent},
+  {path: 'request-view/:id', component: RequestViewComponent}
 ];
 
 @NgModule({

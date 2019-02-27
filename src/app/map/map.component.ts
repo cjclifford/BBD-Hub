@@ -21,6 +21,7 @@ export class MapComponent implements OnInit {
       data => {
         this._sharedService.rooms = data;
         this.rooms = data;
+        console.log(this.rooms);
       }
     );
   }
