@@ -3,6 +3,7 @@ const sql = require('mssql');
 const bodyParser = require('body-parser');
 const authRoutes = require('./route/route');
 const path = require('path');
+const cors = require('cors');
 var publicDir = path.join(__dirname,'/');
 
 const hostname = '127.0.0.1';
@@ -18,6 +19,11 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+app.use(cors({
+    origin: ['http://localhost:4200'],
+    credentials: true
+}));
+
 app.use(bodyParser.json());
 
 const config = {
@@ -27,26 +33,26 @@ const config = {
     database: 'BBD_Hub'
 }
 
+sql.connect(config, (error) => {
+    if (error) console.log(error);
+    else console.log('success');
+});
 
 app.get('/', (req, res) => {
-    sql.connect(config, (error) => {
-        if (error) console.log(error);
-        else console.log('success');
-    });
     res.render('index', {
       user: req.user
   });
 });
 
-app.get('/getRequests', async (req, res) => {
+app.get('/getRequests', (req, res) => {
     request = new sql.Request();
-    request.query('SELECT * FROM Requests', (error, recordSet) => {
+    sql.query('SELECT * FROM Requests', (error, recordSet) => {
         if (error) throw error;
         res.status(200).send(recordSet);
     });
 });
 
-app.get('/getSpecificRequest/:id', async (req, res) => {
+app.get('/getSpecificRequest/:id', (req, res) => {
     request = new sql.Request();
     request.query(`SELECT * FROM Requests WHERE RequestID = ${req.params.id}`, (error, recordSet) => {
         if (error) throw error;
@@ -54,13 +60,13 @@ app.get('/getSpecificRequest/:id', async (req, res) => {
     });
 });
 
-app.delete('/deleteSpecificRequest/:id', async (req, res) => {
+app.delete('/deleteSpecificRequest/:id', (req, res) => {
     request = new sql.Request();
     request.query(`DELETE FROM Requests WHERE RequestID = ${req.params.id}`);
     res.status(200).send(`DELETE request success`);
 });
 
-app.post('/addRequest', async (req, res) => {
+app.post('/addRequest', (req, res) => {
     request = new sql.Request();
     request.query(`INSERT INTO Requests(RoomID, FlagID, Status, Description) VALUES (${req.body.roomId}, ${req.body.flagId}, 0, ${req.body.description})`,
     (error, recordSet) => {
