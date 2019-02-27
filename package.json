@@ -20,7 +20,11 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
+<<<<<<< HEAD
     "mssql": "^4.3.2",
+=======
+    "ejs": "^2.6.1",
+>>>>>>> b4aace863272b1d54536eecbf2538541c7925eae
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
@@ -45,5 +49,17 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjclifford/BBD-Hub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjclifford/BBD-Hub/issues"
+  },
+  "homepage": "https://github.com/cjclifford/BBD-Hub#readme"
 }

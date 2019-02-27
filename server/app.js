@@ -1,12 +1,19 @@
 const express = require('express');
 const sql = require('mssql');
 const bodyParser = require('body-parser');
+const authRoutes = require('./route/route');
+const path = require('path');
+var publicDir = path.join(__dirname,'/');
 
 const hostname = '127.0.0.1';
 const port = '4000';
 
 const app = express();
 
+//remove later
+app.set('view engine', 'ejs');
+app.use('/route', authRoutes);
+app.use(express.static(publicDir));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -19,17 +26,16 @@ const config = {
     server: 'localhost',
     database: 'BBD_Hub'
 }
-try {
+
+
+app.get('/', (req, res) => {
     sql.connect(config, (error) => {
         if (error) console.log(error);
         else console.log('success');
     });
-} catch (error) {
-    throw error;
-}
-
-app.get('/', (req, res) => {
-    res.status(200).send('hello world');
+    res.render('index', {
+      user: req.user
+  });
 });
 
 app.get('/getRequests', async (req, res) => {
@@ -62,6 +68,7 @@ app.post('/addRequest', async (req, res) => {
         res.status(200).send(recordSet);
     });
 })
+
 
 // CRUD operations for Maintainers
 app.get('/getMaintainers', (req, res) => {
