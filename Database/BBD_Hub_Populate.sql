@@ -25,7 +25,7 @@ VALUES
 GO
 
 INSERT INTO Users([FirstName],[LastName])
-VALUE
+VALUES
     ('Bob','The Builder'),
     ('Spongebob','Square Pants'),
     ('Tinky','Winky'),
