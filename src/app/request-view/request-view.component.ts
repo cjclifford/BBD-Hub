@@ -12,9 +12,7 @@ export class RequestViewComponent implements OnInit {
 
   rooms;
     
-  constructor(
-    private _sharedService: SharedService
-  ) { }
+  constructor(private _sharedService: SharedService) {}
 
   ngOnInit() {
     this.rooms = this._sharedService.rooms;
