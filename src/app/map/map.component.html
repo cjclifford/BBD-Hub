@@ -1,8 +1,10 @@
 <h2>Requests</h2>
 <div *ngFor="let request of requests">
-  {{ request.id }}<br>
-  {{ request.roomId }}<br>
-  {{ request.flagId }}<br>
-  {{ request.status }}<br>
-  {{ request.description }}<br>
+  <a routerLink="request-view">
+    {{ request.RoomID }}
+    {{ request.FlagID }}
+    {{ request.Status }}
+    {{ request.Description }}
+  </a>
+  <br>
 </div>
