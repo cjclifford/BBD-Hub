@@ -25,6 +25,4 @@ export class RequestViewComponent implements OnInit {
     this._requestsService.getRequestByRoomId(this._activatedRoute.snapshot.paramMap.get('id'));
   }
 
-  getRequestByRoomID: 
-
 }
