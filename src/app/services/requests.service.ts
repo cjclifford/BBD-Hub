@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequestsService {
 
-  private _url = '/requests';
+  private _url = 'http://localhost:4000/getRequests';
 
   constructor(private _http: HttpClient) {}
 

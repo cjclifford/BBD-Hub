@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestsService } from '../services/requests.service';
 
 @Component({
   selector: 'app-map',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _requestService: RequestsService) {}
+
+  public requests;
 
   ngOnInit() {
+    console.log('map component');
+    this._requestService.getAllRequests().subscribe(
+      data => {
+        this.requests = data.recordset;
+      }
+    );
   }
 
 }
