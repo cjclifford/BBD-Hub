@@ -32,7 +32,7 @@ app.get('/', async (req, res) => {
     res.status(200).send('hello world');
 });
 
-app.get('/request', async (req, res) => {
+app.get('/getRequests', async (req, res) => {
     request = new sql.Request();
     request.query('SELECT * FROM Requests', (error, recordSet) => {
         if (error) throw error;
@@ -40,7 +40,7 @@ app.get('/request', async (req, res) => {
     });
 });
 
-app.get('/request/:id', async (req, res) => {
+app.get('/getSpecificRequest/:id', async (req, res) => {
     request = new sql.Request();
     request.query(`SELECT * FROM Requests WHERE RequestID = ${req.params.id}`, (error, recordSet) => {
         if (error) throw error;
@@ -48,13 +48,13 @@ app.get('/request/:id', async (req, res) => {
     });
 });
 
-app.delete('/request/:id', async (req, res) => {
+app.delete('/deleteSpecificRequest/:id', async (req, res) => {
     request = new sql.Request();
     request.query(`DELETE FROM Requests WHERE RequestID = ${req.params.id}`);
     res.status(200).send(`DELETE request success`);
 });
 
-app.post('/request', async (req, res) => {
+app.post('/addRequest', async (req, res) => {
     request = new sql.Request();
     request.query(`INSERT INTO Requests(RoomID, FlagID, Status, Description) VALUES (${req.body.roomId}, ${req.body.flagId}, 0, ${req.body.description})`,
     (error, recordSet) => {
