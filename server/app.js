@@ -28,11 +28,12 @@ try {
     throw error;
 }
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
     res.status(200).send('hello world');
 });
 
-app.get('/request', async (req, res) => {
+// CRUD operations for Requests
+app.get('/request', (req, res) => {
     request = new sql.Request();
     request.query('SELECT * FROM Requests', (error, recordSet) => {
         if (error) throw error;
@@ -40,7 +41,7 @@ app.get('/request', async (req, res) => {
     });
 });
 
-app.get('/request/:id', async (req, res) => {
+app.get('/request/:id', (req, res) => {
     request = new sql.Request();
     request.query(`SELECT * FROM Requests WHERE RequestID = ${req.params.id}`, (error, recordSet) => {
         if (error) throw error;
@@ -48,13 +49,14 @@ app.get('/request/:id', async (req, res) => {
     });
 });
 
-app.delete('/request/:id', async (req, res) => {
+app.delete('/request/:id', (req, res) => {
     request = new sql.Request();
     request.query(`DELETE FROM Requests WHERE RequestID = ${req.params.id}`);
     res.status(200).send(`DELETE request success`);
 });
 
-app.post('/request', async (req, res) => {
+app.post('/request', (req, res) => {
+    // TODO: save images from body
     request = new sql.Request();
     request.query(`INSERT INTO Requests(RoomID, FlagID, Status, Description) VALUES (${req.body.roomId}, ${req.body.flagId}, 0, ${req.body.description})`,
     (error, recordSet) => {
@@ -62,6 +64,39 @@ app.post('/request', async (req, res) => {
         res.status(200).send(recordSet);
     });
 })
+
+// CRUD operations for Maintainers
+app.get('/maintainers', (req, res) => {
+    request = new sql.Request();
+    request.query(`SELECT * FROM Maintainers`, (error, recordSet) => {
+        if (error) throw error;
+        res.status(200).send(recordSet);
+    });
+});
+
+app.get('/maintainers/:id', (req, res) => {
+    request = new sql.Request();
+    request.query(`SELECT * FROM Maintainers WHERE MaintainerID = ${req.params.id}`, (error, recordSet) => {
+        if (error) throw error;
+        res.status(200).send(recordSet);
+    });
+});
+
+app.delete('/maintainers/:id', (req, res) => {
+    request = new sql.Request();
+    request.query(`DELETE FROM Maintainers WHERE MaintainerID = ${req.params.id}`, (error, recordSet) => {
+        if (error) throw error;
+        res.status(200).send(recordSet);
+    });
+});
+
+app.post('/maintainers', (req, res) => {
+    request = new sql.Request();
+    request.query(`INSERT INTO Maintainers(Name, Surname) VALUES (${req.body.name}, ${req.body.surname})`, (error, recordSet) => {
+        if (error) throw error;
+        res.status(200).send(recordSet);
+    });
+});
 
 app.listen(port, () => {
     console.log(`Server running at https://${hostname}:${port}`);
