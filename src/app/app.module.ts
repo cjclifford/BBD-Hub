@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { RequestFormComponent } from './request-form/request-form.component';
+import { RequestViewComponent } from './request-view/request-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    RequestFormComponent
+    RequestFormComponent,
+    RequestViewComponent
   ],
   imports: [
     BrowserModule,
