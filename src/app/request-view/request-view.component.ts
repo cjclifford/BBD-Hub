@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { requests } from 'src/request';
 
 @Component({
   selector: 'app-request-view',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request-view.component.css']
 })
 export class RequestViewComponent implements OnInit {
-
+  mRequests: requests[];
+    
   constructor() { }
 
   ngOnInit() {
