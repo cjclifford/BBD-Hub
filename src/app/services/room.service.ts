@@ -6,9 +6,9 @@ import { throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class RequestsService {
+export class RoomsService {
 
-  private _url = 'http://localhost:4000/getRequests';
+  private _url = 'http://localhost:4000/getRooms';
 
   constructor(private _http: HttpClient) {}
 

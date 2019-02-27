@@ -1,6 +1,6 @@
 <h2>Requests</h2>
-<div *ngFor="let request of requests">
-  <a routerLink="request-view">
+<div *ngFor="let request of requests.recordset">
+  <a routerLink="/request-view">
     {{ request.RoomID }}
     {{ request.FlagID }}
     {{ request.Status }}

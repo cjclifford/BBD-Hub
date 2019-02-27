@@ -45,7 +45,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/getRequests', (req, res) => {
-    request = new sql.Request();
     sql.query('SELECT * FROM Requests', (error, recordSet) => {
         if (error) throw error;
         res.status(200).send(recordSet);
@@ -53,22 +52,19 @@ app.get('/getRequests', (req, res) => {
 });
 
 app.get('/getSpecificRequest/:id', (req, res) => {
-    request = new sql.Request();
-    request.query(`SELECT * FROM Requests WHERE RequestID = ${req.params.id}`, (error, recordSet) => {
+    sql.query(`SELECT * FROM Requests WHERE RequestID = ${req.params.id}`, (error, recordSet) => {
         if (error) throw error;
         res.status(200).send(recordSet);
     });
 });
 
 app.delete('/deleteSpecificRequest/:id', (req, res) => {
-    request = new sql.Request();
-    request.query(`DELETE FROM Requests WHERE RequestID = ${req.params.id}`);
+    sql.query(`DELETE FROM Requests WHERE RequestID = ${req.params.id}`);
     res.status(200).send(`DELETE request success`);
 });
 
 app.post('/addRequest', (req, res) => {
-    request = new sql.Request();
-    request.query(`INSERT INTO Requests(RoomID, FlagID, Status, Description) VALUES (${req.body.roomId}, ${req.body.flagId}, 0, ${req.body.description})`,
+    sql.query(`INSERT INTO Requests(RoomID, FlagID, Status, Description) VALUES (${req.body.roomId}, ${req.body.flagId}, 0, ${req.body.description})`,
     (error, recordSet) => {
         if (error) throw error;
         res.status(200).send(recordSet);
@@ -78,32 +74,36 @@ app.post('/addRequest', (req, res) => {
 
 // CRUD operations for Maintainers
 app.get('/getMaintainers', (req, res) => {
-    request = new sql.Request();
-    request.query(`SELECT * FROM Maintainers`, (error, recordSet) => {
+    sql.query(`SELECT * FROM Maintainers`, (error, recordSet) => {
         if (error) throw error;
         res.status(200).send(recordSet);
     });
 });
 
 app.get('/getSpecificMaintainers/:id', (req, res) => {
-    request = new sql.Request();
-    request.query(`SELECT * FROM Maintainers WHERE MaintainerID = ${req.params.id}`, (error, recordSet) => {
+    sql.query(`SELECT * FROM Maintainers WHERE MaintainerID = ${req.params.id}`, (error, recordSet) => {
         if (error) throw error;
         res.status(200).send(recordSet);
     });
 });
 
 app.delete('/deleteSpecificMaintainers/:id', (req, res) => {
-    request = new sql.Request();
-    request.query(`DELETE FROM Maintainers WHERE MaintainerID = ${req.params.id}`, (error, recordSet) => {
+    sql.query(`DELETE FROM Maintainers WHERE MaintainerID = ${req.params.id}`, (error, recordSet) => {
         if (error) throw error;
         res.status(200).send(recordSet);
     });
 });
 
 app.post('/createNewMaintainers', (req, res) => {
-    request = new sql.Request();
-    request.query(`INSERT INTO Maintainers(Name, Surname) VALUES (${req.body.name}, ${req.body.surname})`, (error, recordSet) => {
+    sql.query(`INSERT INTO Maintainers(Name, Surname) VALUES (${req.body.name}, ${req.body.surname})`, (error, recordSet) => {
+        if (error) throw error;
+        res.status(200).send(recordSet);
+    });
+});
+
+// CRUD operations for rooms
+app.get('/getRooms', (req, res) => {
+    sql.query(`SELECT * FROM Rooms`, (error, recordSet) => {
         if (error) throw error;
         res.status(200).send(recordSet);
     });
