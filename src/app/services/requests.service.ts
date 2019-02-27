@@ -17,6 +17,11 @@ export class RequestsService {
       .pipe(catchError(this.errorHandler));
   }
 
+  getRequestByRoomId(id) {
+    return this._http.get(`${this._url}/${id}`)
+      .pipe(catchError(this.errorHandler));
+  }
+
   // add request
 
   // delete request

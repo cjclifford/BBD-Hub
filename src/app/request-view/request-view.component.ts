@@ -11,7 +11,7 @@ export class RequestViewComponent implements OnInit {
   mRequests: requests[];
 
   rooms;
-    
+
   constructor(
     private _sharedService: SharedService
   ) { }
