@@ -29,6 +29,7 @@ app.use(bodyParser.json());
 const config = {
     user: 'sa',
     password: 'Password_',
+    /*server: 'localhost\\SQLEXPRESS', */
     server: 'localhost',
     database: 'BBD_Hub'
 }
