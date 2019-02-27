@@ -18,6 +18,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     BrowserModule,
     AppRoutingModule
   ],
+  exports: [HomepageComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
