@@ -9,6 +9,7 @@ import { MapComponent } from './map/map.component';
 import { RequestFormComponent } from './request-form/request-form.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RequestViewComponent } from './request-view/request-view.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RequestViewComponent } from './request-view/request-view.component';
     MapComponent,
     RequestFormComponent,
     HomepageComponent,
-    RequestViewComponent
+    RequestViewComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

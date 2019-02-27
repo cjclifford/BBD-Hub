@@ -12,7 +12,7 @@ const port = '4000';
 const app = express();
 
 //remove later
-app.set('view engine', 'ejs');
+
 app.use('/route', authRoutes);
 app.use(express.static(publicDir));
 app.use(bodyParser.urlencoded({
@@ -39,9 +39,7 @@ sql.connect(config, (error) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('index', {
-      user: req.user
-  });
+res.send("connected");
 });
 
 app.get('/getRequests', (req, res) => {
