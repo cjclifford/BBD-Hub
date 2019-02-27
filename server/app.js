@@ -32,8 +32,12 @@ app.get('/', (req, res) => {
     res.status(200).send('hello world');
 });
 
+<<<<<<< HEAD
 // CRUD operations for Requests
 app.get('/request', (req, res) => {
+=======
+app.get('/getRequests', async (req, res) => {
+>>>>>>> d7ee443ac7c8452c02b2f251de371fafc3f49071
     request = new sql.Request();
     request.query('SELECT * FROM Requests', (error, recordSet) => {
         if (error) throw error;
@@ -41,7 +45,11 @@ app.get('/request', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 app.get('/request/:id', (req, res) => {
+=======
+app.get('/getSpecificRequest/:id', async (req, res) => {
+>>>>>>> d7ee443ac7c8452c02b2f251de371fafc3f49071
     request = new sql.Request();
     request.query(`SELECT * FROM Requests WHERE RequestID = ${req.params.id}`, (error, recordSet) => {
         if (error) throw error;
@@ -49,14 +57,22 @@ app.get('/request/:id', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 app.delete('/request/:id', (req, res) => {
+=======
+app.delete('/deleteSpecificRequest/:id', async (req, res) => {
+>>>>>>> d7ee443ac7c8452c02b2f251de371fafc3f49071
     request = new sql.Request();
     request.query(`DELETE FROM Requests WHERE RequestID = ${req.params.id}`);
     res.status(200).send(`DELETE request success`);
 });
 
+<<<<<<< HEAD
 app.post('/request', (req, res) => {
     // TODO: save images from body
+=======
+app.post('/addRequest', async (req, res) => {
+>>>>>>> d7ee443ac7c8452c02b2f251de371fafc3f49071
     request = new sql.Request();
     request.query(`INSERT INTO Requests(RoomID, FlagID, Status, Description) VALUES (${req.body.roomId}, ${req.body.flagId}, 0, ${req.body.description})`,
     (error, recordSet) => {
