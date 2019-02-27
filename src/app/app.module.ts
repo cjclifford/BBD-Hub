@@ -15,7 +15,7 @@ import { RequestViewComponent } from './request-view/request-view.component';
     AppComponent,
     MapComponent,
     RequestFormComponent,
-    HomepageComponent
+    HomepageComponent,
     RequestViewComponent
   ],
   imports: [
