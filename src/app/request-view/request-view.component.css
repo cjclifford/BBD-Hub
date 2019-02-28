@@ -4,3 +4,8 @@
     width: 100%;
     height: fit-content;
 }
+
+#pic {
+    width: 50%;
+    background-color: blue;
+}
