@@ -27,7 +27,6 @@ export class MapComponent implements OnInit {
     }
 
     onRoomButtonTap(room) {
-        console.log(room.roomId);
-        this._router.navigate(['request-view', room.roomId]);
+        this._router.navigateByUrl('/request-view');
     }
 }
