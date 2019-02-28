@@ -28,8 +28,8 @@ app.use(cors({
 app.use(bodyParser.json());
 
 const config = {
-    user: 'Bob',
-    password: 'Password',
+    user: 'sa',
+    password: 'Password_',
     server: 'localhost',
     database: 'BBD_Hub',
 }
