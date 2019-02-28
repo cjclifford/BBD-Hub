@@ -11,9 +11,10 @@
         </div>
    </ActionBar>
 
-
-<StackLayout>
-    <Button class="btn btn-secondary" style="color: red" *ngFor="let room of mockRooms" [text]="room.roomName" (tap)="onRoomButtonTap(room)">
-    </Button>
-</StackLayout>
+<GridView>
+    <StackLayout>
+        <Button class="btn btn-secondary" *ngFor="let room of mockRooms" [text]="room.roomName" (tap)="onRoomButtonTap(room)">
+        </Button>
+    </StackLayout>
+</GridView>
 
