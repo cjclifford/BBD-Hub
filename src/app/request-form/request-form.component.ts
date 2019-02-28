@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-request-form',
@@ -7,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestFormComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+    public ngOnInit() { }
 
 }

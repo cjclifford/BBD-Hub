@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(cors({
     origin: ['http://localhost:4200'],
+    origin: ['http://localhost:4000'],
     credentials: true
 }));
 

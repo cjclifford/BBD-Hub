@@ -10,7 +10,6 @@ import { RequestsService } from '../services/requests.service';
   styleUrls: ['./request-view.component.css']
 })
 export class RequestViewComponent implements OnInit {
-  mRequests: requests[];
 
   rooms;
   requests;
@@ -28,7 +27,6 @@ export class RequestViewComponent implements OnInit {
     this._requestsService.getRequestsByRoomId(this.roomId).subscribe(
       requests => {
         this.requests = requests;
-        console.log(requests)
       }
     );
   }

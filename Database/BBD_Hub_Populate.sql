@@ -31,5 +31,17 @@ VALUES
     ('Tinky','Winky'),
     ('Dip','sy'),
     ('La','La'),
-    ('P','O')
+    ('P','O'),
+    ('Scooby','Doo')
+GO
+
+INSERT INTO Requests([Status],[RoomID],[Description],[FlagID])
+VALUES
+    (1,1,'broken fone',4),
+    (0,5,'a thing broke',4),
+    (0,1,'the thing fell',4),
+    (1,3,'over there',4),
+    (0,4,'its fucked up',4),
+    (1,2,'maybe',4),
+    (1,5,'one or the other',4)
 GO

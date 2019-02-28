@@ -1,8 +1,10 @@
 <h1>Maintanance Requests</h1>
 
 <div *ngFor="let request of requests">
-  {{ request.RoomID }}<br>
-  {{ request.FlagID }}<br>
-  {{ request.Description }}<br>
-  {{ request.Status }}<br>
+  RoomID: {{ request.RoomID }}<br>
+  FlagID: {{ request.FlagID }}<br>
+  Description: {{ request.Description }}<br>
+  Status: {{ request.Status }}<br><br>
 </div>
+
+<button routerLink="/request-form">New Request</button>
