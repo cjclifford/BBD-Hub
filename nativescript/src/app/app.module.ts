@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 
 import { MapComponent } from './map/map.component';
 import { RequestViewComponent } from './request-view/request-view.component';
+import { RequestFormComponent } from './request-form/request-form.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -24,7 +25,8 @@ import { RequestViewComponent } from './request-view/request-view.component';
     declarations: [
         AppComponent,
         MapComponent,
-        RequestViewComponent
+        RequestViewComponent,
+        RequestFormComponent
     ],
     providers: [],
     schemas: [

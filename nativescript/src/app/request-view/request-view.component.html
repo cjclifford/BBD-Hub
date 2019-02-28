@@ -1,1 +1,13 @@
 <ActionBar title="Requests in this room"></ActionBar>
+<ScrollView>
+    <StackLayout>
+        <Label [text]="roomId"></Label>
+        <Button text="New Request" (tap)="onNewRequestTap()"></Button>
+        <StackLayout *ngFor="let request of requests">
+            <StackLayout *ngIf="request.roomId == roomId">
+                <Image [src]="request.requestImage" stretch="none"></Image>
+                <Label [text]="request.description"></Label>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ScrollView>

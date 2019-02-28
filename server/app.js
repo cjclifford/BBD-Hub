@@ -28,10 +28,17 @@ app.use(cors({
 app.use(bodyParser.json());
 
 const config = {
+<<<<<<< HEAD
     user: 'saa',
     password: 'Password',
     server: 'KHUTJOM\\SQLEXPRESS',
     database: 'BBD_Hub'
+=======
+    user: 'sa',
+    password: 'Password_',
+    server: 'localhost',
+    database: 'BBD_Hub',
+>>>>>>> d687fd821aa53bedf26d9c0e2ae9209b811925fd
 }
 
 sql.connect(config, (error) => {
