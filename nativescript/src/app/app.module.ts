@@ -3,8 +3,6 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
 
 import { MapComponent } from './map/map.component';
 import { RequestViewComponent } from './request-view/request-view.component';
@@ -25,8 +23,6 @@ import { RequestViewComponent } from './request-view/request-view.component';
     ],
     declarations: [
         AppComponent,
-        ItemsComponent,
-        ItemDetailComponent,
         MapComponent,
         RequestViewComponent
     ],
