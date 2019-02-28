@@ -27,9 +27,9 @@ app.use(cors({
 app.use(bodyParser.json());
 
 const config = {
-    user: 'sa',
-    password: 'Password_',
-    server: 'localhost',
+    user: 'saa',
+    password: 'Password',
+    server: 'KHUTJOM\\SQLEXPRESS',
     database: 'BBD_Hub'
 }
 
