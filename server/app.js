@@ -21,17 +21,17 @@ app.use(bodyParser.urlencoded({
 
 app.use(cors({
     origin: ['http://localhost:4200'],
+    origin: ['http://localhost:4000'],
     credentials: true
 }));
 
 app.use(bodyParser.json());
 
 const config = {
-    user: 'sa',
-    password: 'Password_',
-    /*server: 'localhost\\SQLEXPRESS', */
+    user: 'Bob',
+    password: 'Password',
     server: 'localhost',
-    database: 'BBD_Hub'
+    database: 'BBD_Hub',
 }
 
 sql.connect(config, (error) => {
