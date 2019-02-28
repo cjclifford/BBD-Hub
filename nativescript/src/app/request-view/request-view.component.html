@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-<ActionBar title="Requests in this room"></ActionBar>
-<GridView>
-    <ScrollView>
-        <StackLayout>
-            <Label [text]="roomId"></Label>
-            <Button text="New Request" (tap)="onNewRequestTap()"></Button>
-            <StackLayout *ngFor="let request of requests">
-                <StackLayout *ngIf="request.roomId == roomId">
-                    <Image [src]="request.requestImage" stretch="none"></Image>
-                    <Label [text]="request.description"></Label>
-                </StackLayout>
-=======
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -24,15 +11,15 @@
 <ActionBar>
     <Label class="h3 p-15" text="Requests in this room" textWrap="true"></Label>
 </ActionBar>
-<ScrollView>
-    <StackLayout>
-        <Label [text]="roomId"></Label>
-        <Button class="btn btn-secondary" text="New Request" (tap)="onNewRequestTap()"></Button>
-        <StackLayout class="container" *ngFor="let request of requests">
-            <StackLayout *ngIf="request.roomId == roomId">
-                <Image style="height: 500px;margin: 15; border-radius: 5%" [src]="request.requestImage" stretch="aspectFit"></Image>
-                <Label class="h3 p-15" [text]="request.description"></Label>
->>>>>>> 68f0834b4e61f4656a09bd1be18cc3cdc9ef67a3
+<GridView>
+    <ScrollView>
+        <StackLayout>
+            <Button class="btn btn-secondary" text="New Request" (tap)="onNewRequestTap()"></Button>
+            <StackLayout class="container" *ngFor="let request of requests">
+                <StackLayout *ngIf="request.roomId == roomId">
+                    <Image style="height: 500px;margin: 15; border-radius: 5%" [src]="request.requestImage" stretch="aspectFit"></Image>
+                    <Label class="h3 p-15" [text]="request.description"></Label>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ScrollView>
