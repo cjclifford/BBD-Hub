@@ -1,6 +1,6 @@
 {
     "nativescript": {
-        "id": "org.nativescript.BBDHub",
+        "id": "org.nativescript.nativescript",
         "tns-android": {
             "version": "5.2.0"
         },
