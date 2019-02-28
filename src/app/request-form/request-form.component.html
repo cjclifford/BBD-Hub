@@ -1,8 +1,32 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html>
 
-<div class="container" style="max-width: 850px ">
+<head>
+  <title>BBDHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="../styles/index.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="icon" id="favicon" type="image/png"
+    href="https://community.bbd.co.za/wp-content/uploads/2014/05/bbd-logo-fav.png">
+</head>
+
+<body >
+
+  <div class="container">
+    <img id="HomeLogo" alt="BBDcommunity - Community Knowledge"
+      src="https://github.com/khutjo/hyper_tube/blob/master/oauth_42/media/bbd%20hub.png?raw=true">
+    <ul class="nav nav-tabs" id="NavTabs" role="tablist">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="/">Logs</a></li>
+      <li><a href="/">Notification</a></li>
+      <li><a href="/">About</a></li>
+    </ul>
+
+
+
+<div class="container" style="max-width: 850px; padding-top: 100px;">
     <div style ="float:right;">
         <form>
             <span class="">
@@ -14,41 +38,47 @@
             <label class="" for="first-name">Tell us your name *</label>
             <br>
             <div class="" data-validate="Type first name">
-                <input action="post" id="first-name" class="" type="text" name="first-name" placeholder="First name">
+                <input action="post" id="first-name" class="form-control" type="text" name="first-name" placeholder="First name">
                 <span class=""></span>
             </div>
             <br />
             <div class="" data-validate="Type last name">
-                <input class="" type="text" name="last-name" placeholder="Last name">
+                <input class="form-control" type="text" name="last-name" placeholder="Last name">
                 <span class=""></span>
             </div>
             <br />
             <label class="" for="email">Enter your email *</label>
             <div class="" data-validate="Valid email is required: ex@abc.xyz">
-                <input id="email" class="i" type="text" name="email" placeholder="Eg. example@email.com">
+                <input id="email" class="form-control" type="text" name="email" placeholder="Eg. example@email.com">
                 <span class=""></span>
             </div>
             <br />
             <label class="" for="message">Description *</label>
             <div class="" data-validate="Message is required">
-                <textarea id="message" class="" name="message" placeholder="Describe the issue"></textarea>
+                <textarea id="message" class="form-control" name="message" placeholder="Describe the issue"></textarea>
                 <span class=""></span>
             </div>
             <br />
-            <div width="400px" height="400px">
+            <div width="400px" height="400px" >
                 <img width="400px" [src]="webcamImage.imageAsDataUrl"/>
             </div>
-            <div class="">
-                <button class="btn">
+            <div class="" >
+                <button class="btn" class="btn btn-secondary">
                     Submit your report
                 </button>
             </div>
             <br />
         </form>
     </div>
-    <div float="left">
-        <webcam [width]=400 [height]=400 [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+    <div float="left" (load)="triggerSnapshot();">
+        <webcam [width]=400 [height]=400  [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
         <br />
-        <button id="snapshotBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+        <button id="snapshotBtn" class="btn btn-secondary" (click)="triggerSnapshot();">Take A Snapshot</button>
     </div>
 </div>
+
+
+</div>
+</body>
+
+</html>

@@ -10,7 +10,7 @@ import {WebcamImage} from 'ngx-webcam';
 })
 export class RequestFormComponent implements OnInit {
 
-  
+  public count: 0;
    private trigger: Subject<void> = new Subject<void>();
 
   // latest snapshot
