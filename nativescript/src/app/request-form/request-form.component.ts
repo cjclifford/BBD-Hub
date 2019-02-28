@@ -26,7 +26,7 @@ export class RequestFormComponent implements OnInit {
                 camera.takePicture()
                     .then((imageAsset) => {
                         this.image = new Image();
-                        this.image.src = imageAsset;
+                        this.image = imageAsset;
                     }).catch((error) => {
                         console.log('Error: ', error.message);
                 });
