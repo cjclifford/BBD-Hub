@@ -1,23 +1,27 @@
 import {Component, OnInit} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
-import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
+import {WebcamImage} from 'ngx-webcam';
 
 @Component({
   selector: 'app-request-form',
   templateUrl: './request-form.component.html',
   styleUrls: ['./request-form.component.css']
 })
-export class RequestFormComponent {
+export class RequestFormComponent implements OnInit {
 
-  public seconds:number ;
+  
    private trigger: Subject<void> = new Subject<void>();
 
   // latest snapshot
   public webcamImage: WebcamImage = null;
 
+  constructor(){this.trigger.next();}
+  ngOnInit() {
+  }
+
   public triggerSnapshot(): void {
-    this.trigger.next(); 
+         this.trigger.next();       
   }
 
   public handleImage(webcamImage: WebcamImage): void {
