@@ -18,6 +18,7 @@ export class RequestFormComponent implements OnInit {
 
   constructor(){this.trigger.next();}
   ngOnInit() {
+    
   }
 
   public triggerSnapshot(): void {
