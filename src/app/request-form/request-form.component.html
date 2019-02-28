@@ -1,44 +1,53 @@
-<form style="text-align:center" >
+<form style="text-align:center">
     <span class="">
         Report Maintainance Issue
-        <br/>
-        <br/>
+        <br />
+        <br />
     </span>
 
     <label class="" for="first-name">Tell us your name *</label>
     <br>
     <div class="" data-validate="Type first name">
-        <input action ="post" id="first-name" class="" type="text" name="first-name" placeholder="First name">
+        <input action="post" id="first-name" class="" type="text" name="first-name" placeholder="First name">
         <span class=""></span>
     </div>
-    <br/>
+    <br />
     <div class="" data-validate="Type last name">
         <input class="" type="text" name="last-name" placeholder="Last name">
         <span class=""></span>
     </div>
-    <br/>
+    <br />
     <label class="" for="email">Enter your email *</label>
     <div class="" data-validate="Valid email is required: ex@abc.xyz">
         <input id="email" class="i" type="text" name="email" placeholder="Eg. example@email.com">
         <span class=""></span>
     </div>
-    <br/>
+    <br />
     <label class="" for="message">Description *</label>
     <div class="" data-validate="Message is required">
         <textarea id="message" class="" name="message" placeholder="Describe the issue"></textarea>
         <span class=""></span>
     </div>
-    <br/>
+    <br />
+    <div>
+        <img [src]="webcamImage.imageAsDataUrl" />    
+    </div>
     <div class="">
         <button class="btn">
             Submit your report
         </button>
     </div>
-    <br/>
-    <div class="">
-       
-        <webcam [height]="200" [width]="400"></webcam>
-        <br>
-        <button id="snap">Capture Image</button>
-    </div>
+    <br />
 </form>
+
+<div style="text-align:center">
+    <div>
+        <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+        <br />
+        <button id="snapshotBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+    </div>
+</div>
+<div class="snapshot" *ngIf="webcamImage">
+    <h2>Nice one!</h2>
+    <img [src]="webcamImage.imageAsDataUrl" />
+</div>
