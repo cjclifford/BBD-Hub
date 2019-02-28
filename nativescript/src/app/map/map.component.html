@@ -1,1 +1,8 @@
-<Button text="Test"></Button>
+<ActionBar title="Rooms"></ActionBar>
+<StackLayout>
+    <Button
+        *ngFor="let room of mockRooms"
+        [text]="room.roomName"
+        (tap)="onRoomButtonTap(room)">
+    </Button>
+</StackLayout>
