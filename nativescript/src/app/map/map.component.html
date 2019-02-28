@@ -4,7 +4,6 @@
 <link rel="icon" id="favicon" type="image/png"
     href="https://community.bbd.co.za/wp-content/uploads/2014/05/bbd-logo-fav.png">
 
-
     
     <ActionBar>
         <div>
@@ -14,7 +13,7 @@
 
 
 <StackLayout>
-    <Button class="btn btn-secondary" *ngFor="let room of mockRooms" [text]="room.roomName" (tap)="onRoomButtonTap(room)">
+    <Button class="btn btn-secondary" style="color: red" *ngFor="let room of mockRooms" [text]="room.roomName" (tap)="onRoomButtonTap(room)">
     </Button>
 </StackLayout>
 
