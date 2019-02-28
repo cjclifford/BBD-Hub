@@ -1,8 +1,21 @@
-<ActionBar title="Rooms"></ActionBar>
-<StackLayout>
-    <Button
-        *ngFor="let room of mockRooms"
-        [text]="room.roomName"
-        (tap)="onRoomButtonTap(room)">
-    </Button>
-</StackLayout>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="icon" id="favicon" type="image/png"
+    href="https://community.bbd.co.za/wp-content/uploads/2014/05/bbd-logo-fav.png">
+
+
+    
+    <ActionBar>
+        <div>
+            <Label  class="h1 p-15" text="Rooms" textWrap="true"></Label>
+        </div>
+   </ActionBar>
+
+<GridView>
+    <StackLayout>
+        <Button class="btn btn-secondary" *ngFor="let room of mockRooms" [text]="room.roomName" (tap)="onRoomButtonTap(room)">
+        </Button>
+    </StackLayout>
+</GridView>
+

@@ -1,13 +1,26 @@
-<ActionBar title="Requests in this room"></ActionBar>
-<ScrollView>
-    <StackLayout>
-        <Label [text]="roomId"></Label>
-        <Button text="New Request" (tap)="onNewRequestTap()"></Button>
-        <StackLayout *ngFor="let request of requests">
-            <StackLayout *ngIf="request.roomId == roomId">
-                <Image [src]="request.requestImage" stretch="none"></Image>
-                <Label [text]="request.description"></Label>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="icon" id="favicon" type="image/png"
+    href="https://community.bbd.co.za/wp-content/uploads/2014/05/bbd-logo-fav.png">
+
+
+
+
+
+<ActionBar>
+    <Label class="h3 p-15" text="Requests in this room" textWrap="true"></Label>
+</ActionBar>
+<GridView>
+    <ScrollView>
+        <StackLayout>
+            <Button class="btn btn-secondary" text="New Request" (tap)="onNewRequestTap()"></Button>
+            <StackLayout class="container" *ngFor="let request of requests">
+                <StackLayout *ngIf="request.roomId == roomId">
+                    <Image style="height: 500px;margin: 15; border-radius: 5%" [src]="request.requestImage" stretch="aspectFit"></Image>
+                    <Label class="h3 p-15" [text]="request.description"></Label>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
-    </StackLayout>
-</ScrollView>
+    </ScrollView>
+</GridView>
